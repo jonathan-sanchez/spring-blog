@@ -2,11 +2,16 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
 	<meta charset="UTF-8">
-	<title>Here are all the users</title>
+	<title>Show all Users</title>
+	<th:block th:replace="partials/navbar :: bootstrap_styling_sheet"></th:block>
 </head>
 <body>
+<nav th:replace="partials/navbar :: bootstrap_nav"></nav>
+<h1>Here are all the Users</h1>
 
-
+<div th:if="${user.firstName.toLowerCase() == 'jon'}">
+	<p>Pretty cool guy</p>
+</div>
 
 </body>
 </html>
