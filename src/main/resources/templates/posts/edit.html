@@ -1,10 +1,33 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<title>Title</title>
-</head>
+<html xmlns:th="http://www.thymeleaf.org"
+	  xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
+	  lang="en">
+<th:head th:replace="partials/header :: header"></th:head>
 <body>
+<nav th:replace="partials/navbar :: bootStrap_nav" ></nav>
 
+<h5>Edit or add an image:</h5>
+<br>
+<form th:action="@{/posts/edit/{id}(id=${post.id})}" method="post" th:object="${post}">
+	<label for="title">Title:</label>
+	<input id="title" type="text" th:value="${post.title}" th:field="*{title}">
+	<br>
+	<label for="body">Body:</label>
+	<input id="body" type="text" th:value="${post.body}" th:field="*{body}">
+	<br>
+	<div>
+		<label for="imageURL">Image URL:</label>
+		<input id="imageURL" type="text" name="imageURL">
+		<br>
+		<label for="imageDescription">Image Description:</label>
+		<input id="imageDescription" type="text" name="imageDescription">
+	</div>
+	<input type="hidden" th:value="${post.user.id}" th:field="*{user.id}">
+	<br>
+	<button type="submit">Submit</button>
+</form>
+
+
+<footer th:replace="partials/footer :: bootStrap_footer" ></footer>
 </body>
 </html>
