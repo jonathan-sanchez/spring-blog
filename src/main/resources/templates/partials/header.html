@@ -1,10 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
+<head th:fragment="header">
 	<meta charset="UTF-8">
-	<title>Title</title>
+	<title>Index Page</title>
+	<th:block th:replace="partials/navbar :: bootStrap_styling_sheet" ></th:block>
+	<th:block th:replace="partials/navbar :: bootStrap_scripts" ></th:block>
 </head>
-<body>
-
-</body>
 </html>
