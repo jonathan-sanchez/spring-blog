@@ -17,6 +17,6 @@ public class AdController {
         model.addAttribute("ads", adDao.findAll());
         model.addAttribute("topAd", adDao.findByTitle("bicycle north side"));
         model.addAttribute("searchAd", adDao.findByTitleLike("%childcare%"));
-        return "adIndex";
+        return "adindex";
     }
 }

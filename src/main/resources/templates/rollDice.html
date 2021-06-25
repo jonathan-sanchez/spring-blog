@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Roll Dice</title>
+	<th:block th:replace="partials/navbar :: bootStrap_styling_sheet" ></th:block>
+	<th:block th:replace="partials/footer :: bootStrap_styling_sheet" ></th:block>
+</head>
+<body>
+<nav th:replace="partials/navbar :: bootStrap_nav" ></nav>
+<h1>Dice Roll</h1>
+
+<a href="/roll-dice/1">1</a>
+<a href="/roll-dice/2">2</a>
+<a href="/roll-dice/3">3</a>
+<a href="/roll-dice/4">4</a>
+<a href="/roll-dice/5">5</a>
+<a href="/roll-dice/6">6</a>
+
+<h3>This is the result of the dice roll: <span th:text="${diceRoll}"></span></h3>
+
+<th:block th:if="${diceRoll == num}">
+
+	<p>Congrats, you win!</p>
+
+</th:block>
+<th:block th:if="${diceRoll != num}">
+
+	<p>Sorry, Try again.</p>
+
+</th:block>
+
+
+<footer th:replace="partials/footer :: bootStrap_footer" ></footer>
+</body>
+</html>
