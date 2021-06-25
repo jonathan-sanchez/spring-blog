@@ -1,4 +1,4 @@
-package com.codeup.springblog;
+package com.codeup.springblog.controllers;
 
 import ch.qos.logback.classic.spi.LoggerRemoteView;
 import org.springframework.stereotype.Controller;
